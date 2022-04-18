@@ -12,11 +12,11 @@ const setUpData = () => {
     let list2 = [song1, song2];
     let list3 = [song2];
 
-    let playmode = { "repeat1": 0, "repeatAll": 1, "shuffle": 2 };
+    let playmode = { "repeat1": 0, "normal": 1, "shuffle": 2 };
 
-    let user1 = new User('ed', '123', playmode.repeat1, list1);
-    let user2 = new User('mel', '234', playmode.repeat1, list2);
-    let user3 = new User('jay', '345', playmode.repeat1, list3);
+    let user1 = new User('ed', '123', playmode.normal, list1);
+    let user2 = new User('mel', '234', playmode.normal, list2);
+    let user3 = new User('jay', '345', playmode.normal, list3);
     let users = [user1, user2, user3];
 
 
