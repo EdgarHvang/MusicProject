@@ -1,17 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EdMusicPage</title>
+    <link href="../css/music.css" type="text/css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/9d9d5a48dc.js" crossorigin="anonymous"></script>
+
+    <script src="../resources/main.js"></script>
+
+    <link rel="icon" href="https://img1.baidu.com/it/u=1422138320,412649455&fm=253&fmt=auto&app=120&f=JPEG?w=640&h=640"
+        type="image/jpg" sizes="16x16">
+
 </head>
+
 <body>
-    <div class="topArea">
-        <picture></picture>
+
+    <div class="backAll">
+        <div class="topArea">
+            <form id="loginfor">
+                <div class="topInside">
+                    <i class="fa-solid fa-music"></i>
+                    <div id='logindiv'>
+                        <label for="input1">
+                            username: </label>
+                        <input type="text" name="userName" id="input1">
+                        <label for="input2">password: </label>
+                        <input type="text" name="passWord" id="input2">
+                        <button type="button" id="loginBtn">
+                            Login
+                        </button>
+                    </div>
+                    <div id="searchdiv">
+                        <label for="search">
+                            search: </label>
+                        <input type="text" name="keywords" id="search" oninput="getKeyword();"
+                            onporpertychange="getKeyword();">
+                        <i class="fa-brands fa-searchengin"></i>
+
+                    </div>
+                    <button type="button" id="logoutBtn">
+                        Logout
+                    </button>
+
+
+                </div>
+
+            </form>
+        </div>
+        <div class="midArea">
+            <div>
+                <p id="tlb1">
+                    welcome to ed Music
+                </p>
+            </div>
+            <div id="interestinglist" ,class="row">
+
+            </div>
+            <div>
+                <p id="blb1">
+                    your play list
+                </p>
+            </div>
+            <div id="myPlaylist" ,class="row">
+
+            </div>
+
+        </div>
+        <div class="botArea">
+        </div>
+
+        <div style="border-width: 1; padding: 10">
+            <audio id="player" controls src="/Client/mp3/Circles-Post Malone.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+            </audio>
+
+            <button id="sbys">song by song</button>
+            <button id="repeat">repeat</button>
+            <button id="shuffle">shuffle</button>
+        </div>
     </div>
-    <div class="midArea"></div>
-    <div class="botArea"></div>
+
+
+
+    <footer>
+
+    </footer>
 
 </body>
+
 </html>

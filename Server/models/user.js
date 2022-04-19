@@ -10,7 +10,7 @@ module.exports = class User {
         this.songList = songList;
         this.playMode = playMode;
         this.userToken = userToken;
-        this.currentSongId = 0;
+        this.songIndex = 0;
         this.playedList = [];
     }
 
@@ -41,14 +41,14 @@ module.exports = class User {
         let user = users.filter((s) => s.userToken === auth)[0];
         user.songList.push(newSong);
         console.log(users);
-        return user;
+        return user.songList;
     }
 
     static deleteSongById(songId, auth) {
         let user = users.filter((s) => s.userToken === auth)[0];
         user.songList = user.songList.filter((s) => s.songId !== songId);
         console.log(users);
-        return user;
+        return user.songList;
     }
 
     static getSongsByKeyword(keyword) {
@@ -63,21 +63,21 @@ module.exports = class User {
         return user;
     }
 
-    static playNextSong(currentSongId,auth) {
-        let user = users.filter((s) => s.userToken === auth)[0];
-        let playlist = user.songList;
-        switch (user.playMode) {
-            case 0: console.log("repeat1")
-                break;
-            case 1: console.log("normal")
-            return getNSong(currentSongId,playlist)
-            case 2: console.log("shuffle")
-                break;
+    // static playNextSong(currentSongId,auth) {
+    //     let user = users.filter((s) => s.userToken === auth)[0];
+    //     let playlist = user.songList;
+    //     switch (user.playMode) {
+    //         case 0: console.log("repeat1")
+    //             break;
+    //         case 1: console.log("normal")
+    //         return getNSong(currentSongId,playlist)
+    //         case 2: console.log("shuffle")
+    //             break;
 
-            default:
-                break;
-        }
-    }
+    //         default:
+    //             break;
+    //     }
+    // }
 
     getNSong(songId,playlist) {
         let song = playlist.filter((s)=>s.songId = songId);
@@ -88,9 +88,9 @@ module.exports = class User {
         
     }
 
-    static keepCurrentSong(songId,auth){
+    static keepCurrentSong(songIndex,auth){
         let user = users.filter((s) => s.userToken === auth)[0];
-        user.currentSongId = songId;
+        user.songIndex = songIndex;
         return user;
     }
 
@@ -112,7 +112,7 @@ module.exports = class User {
                 user.userToken = "1650260523734ed"; //test
                 users = users.filter((u) => u.userName !== info.userName);
                 users.push(user);
-                console.log(users);
+                console.log(user);
                 return user;
             } else {
                 const err = new Error();
@@ -128,7 +128,7 @@ module.exports = class User {
         console.log(user);
         user.userToken = undefined;
         console.log(users);
-        return users;
+        return user;
     }
 
 

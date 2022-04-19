@@ -1,0 +1,10 @@
+.backAll{
+    display: flex;
+    flex-direction: column;
+}
+
+.topArea .topInside{
+    display: flex;
+    flex-direction: row;
+}
+

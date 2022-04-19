@@ -4,11 +4,16 @@ const User = require('../models/user');
 
 const setUpData = () => {
 
-    const song1 = new Song('1', 'song1', "2021-01-11");
-    const song2 = new Song('2', 'song2', "2021-01-11");
-    const song3 = new Song('3', 'song3', "2021-01-11");
-    let list = [song1, song2, song3];
-    let list1 = [song1, song2, song3];
+    const song1 = new Song('1', 'Circle', "2021-01-11", "/Client/mp3/Circles-Post Malone.mp3");
+    const song2 = new Song('2', 'Cold Heart', "2021-01-11", "/Client/mp3/Cold Heart (PNAU Remix)-Elton John、Dua Lipa.mp3");
+    const song3 = new Song('3', 'Levitating', "2021-01-11", "/Client/mp3/Levitating-Dua Lipa.mp3");
+    const song4 = new Song('4', 'Psycho', "2021-01-11", "/Client/mp3/Psycho-Post Malone、Ty Dolla $ign.mp3");
+    const song5 = new Song('5', 'Sunflower', "2021-01-11", "/Client/mp3/Sunflower (Spider-Man_ Into the Spider.mp3");
+
+
+    let list = [song1, song2, song3, song4, song5];
+    
+    let list1 = [song1, song2, song3, song4, song5];
     let list2 = [song1, song2];
     let list3 = [song2];
 

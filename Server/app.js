@@ -2,12 +2,15 @@ const express = require("express");
 const routes = require('./routers');
 const cors = require('cors');
 
+
 require('./config/data.config').setUpData();
 
 const app = express();
 
 app.use(cors());
+// console.log(cors());
 app.use(express.json());
+// app.use(express.urlencoded);
 
 app.use(routes);
 
@@ -26,6 +29,8 @@ app.use((error, req, res, next) => {
         })
     }
 });
+
+app.set('port',process.env.PORT || 3000);
 
 const server = app.listen(process.env.PORT || 3000, () => {
     console.log('Express app listening on port', server.address().port);

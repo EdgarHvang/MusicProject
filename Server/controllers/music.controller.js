@@ -49,8 +49,8 @@ const playNext = (req,res,next)=>{
 const currentSong = (req,res,next) => {
     let auth = req.auth;
     console.log(auth);
-    console.log(req.params.songId);
-    res.status(200).json(keepCurrentSong(req.params.songId,auth));
+    console.log(req.params.songIndex);
+    res.status(200).json(keepCurrentSong(req.params.songIndex,auth));
 }
 
 const ulogout = (req,res,next)=>{

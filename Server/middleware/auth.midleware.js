@@ -6,7 +6,7 @@ const checkAuth = (req, res, next) => {
     let auth = req.headers.authorization;
     let users = getAllUsers();
 
-    if (users.findIndex((u) => u.userToken === auth ) !== -1) {
+    if (users.findIndex((u) => u.userToken === auth) !== -1) {
         console.log("authenticated", auth);
         let sAuth = "1650260523734ed"; //hard write auth test
         console.log(req.sAuth);
@@ -14,7 +14,7 @@ const checkAuth = (req, res, next) => {
         // req.auth = auth; //product
         console.log(req.auth);
         next();
-    }else {
+    } else {
         // console.log("somgthing is wrong");
         // let err = new Error()
         err.message = 'need login';

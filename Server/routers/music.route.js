@@ -18,7 +18,7 @@ router.post('/play/playMode', authMiddleware.checkAuth, musicController.changeTh
 
 router.get('/play/nextSong', authMiddleware.checkAuth, musicController.playNext);
 
-router.post('/play/currentSong/:songId', authMiddleware.checkAuth, musicController.currentSong);
+router.post('/play/currentSong/:songIndex', authMiddleware.checkAuth, musicController.currentSong);
 
 
 module.exports = router;
