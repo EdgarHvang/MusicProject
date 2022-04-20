@@ -108,8 +108,8 @@ module.exports = class User {
                 console.log("xx");
                 let userToken = Date.now() + info.userName;
                 let user = users.filter((u) => u.userName === info.userName)[0];
-                // user.userToken = userToken; // product
-                user.userToken = "1650260523734ed"; //test
+                user.userToken = userToken; // product
+                // user.userToken = "1650260523734ed"; //test
                 users = users.filter((u) => u.userName !== info.userName);
                 users.push(user);
                 console.log(user);

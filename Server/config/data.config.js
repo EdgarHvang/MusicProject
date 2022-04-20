@@ -12,7 +12,6 @@ const setUpData = () => {
 
 
     let list = [song1, song2, song3, song4, song5];
-    
     let list1 = [song1, song2, song3, song4, song5];
     let list2 = [song1, song2];
     let list3 = [song2];

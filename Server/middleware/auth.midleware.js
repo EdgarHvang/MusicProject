@@ -8,10 +8,10 @@ const checkAuth = (req, res, next) => {
 
     if (users.findIndex((u) => u.userToken === auth) !== -1) {
         console.log("authenticated", auth);
-        let sAuth = "1650260523734ed"; //hard write auth test
+        // let sAuth = "1650260523734ed"; //hard write auth test
         console.log(req.sAuth);
-        req.auth = sAuth // hard write auth test
-        // req.auth = auth; //product
+        // req.auth = sAuth // hard write auth test
+        req.auth = auth; //product
         console.log(req.auth);
         next();
     } else {
